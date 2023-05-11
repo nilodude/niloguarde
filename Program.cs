@@ -4,20 +4,10 @@ using System.Diagnostics;
 
 namespace MyNamespace
 {
-    class MyClassCS
-    {
-        // static string path = @"D:\MUSICA\ableton\sinbeat\stealin Project";
+    class MyClassCS {
+        static string path = Directory.GetParent(Directory.GetCurrentDirectory())!.FullName;
 
-        static string direpath = Directory.GetCurrentDirectory();
-
-        static string path = Directory.GetParent(direpath)!.FullName;
-
-        static void Main()
-        {
-            // THE IDEA IS TO RUN THIS APP FROM ABLETON PROJECT DIRECTORY, AND USE CURRENT DIRECTORY PATH
-            // TODO: NEED TO INFER PATH FROM CURRENT DIRECTORY 
-            // Console.WriteLine(currDir);
-            
+        static void Main() {
             using var watcher = new FileSystemWatcher(path);
 
             watcher.NotifyFilter = NotifyFilters.Attributes
@@ -53,28 +43,20 @@ namespace MyNamespace
             }
             Console.WriteLine($"Saved: {e.FullPath}");
 
-            string[] fullPath = e.FullPath.Split('\\');
-            string file =  fullPath.Last();
-            string fileName = file.Split('.').First();
-            string fileType = file.Split('.').Last();
-            
-            if(!"lacopia".Equals(fileName)){
+            string xmlPath = e.FullPath.Replace(".als", ".xml");
+            string args = $"gzip -cd '{e.FullPath}' > '{xmlPath}'"; 
 
-                string xmlPath = e.FullPath.Replace(".als", ".xml");
-                // string args = "gzip -cd '" + e.FullPath + "' > '" + xmlPath + "'";
-                string args = $"gzip -cd '{e.FullPath}' > '{xmlPath}'";  
-                //TODO: NEED TO HANDLE ERRORS ON CMD
+            //TODO: NEED TO HANDLE ERRORS ON CMD
 
-                ProcessStartInfo ProcessInfo;
-                ProcessInfo = new ProcessStartInfo("powershell.exe", "/C " + args);
-                if (ProcessInfo != null){
-                    ProcessInfo.CreateNoWindow = true;
-                    ProcessInfo.UseShellExecute = false;
+            ProcessStartInfo ProcessInfo;
+            ProcessInfo = new ProcessStartInfo("powershell.exe", "/C " + args);
+            if (ProcessInfo != null){
+                ProcessInfo.CreateNoWindow = true;
+                ProcessInfo.UseShellExecute = false;
+                
+                Process.Start(ProcessInfo);
 
-                    Process.Start(ProcessInfo);
-                    
-                    Console.WriteLine($"Unzipped XML: {xmlPath}");
-                }
+                Console.WriteLine($"Unzipped XML: {xmlPath}");
             }
         }
 
