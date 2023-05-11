@@ -6,8 +6,12 @@ namespace MyNamespace
 {
     class MyClassCS
     {
-        static string path = @"D:\MUSICA\ableton\sinbeat\stealin Project";
-        static string currDir = Directory.GetCurrentDirectory();
+        // static string path = @"D:\MUSICA\ableton\sinbeat\stealin Project";
+
+        static string direpath = Directory.GetCurrentDirectory();
+
+        static string path = Directory.GetParent(direpath)!.FullName;
+
         static void Main()
         {
             // THE IDEA IS TO RUN THIS APP FROM ABLETON PROJECT DIRECTORY, AND USE CURRENT DIRECTORY PATH
@@ -34,8 +38,7 @@ namespace MyNamespace
             watcher.Filter = "*.als";
             watcher.IncludeSubdirectories = true;
             watcher.EnableRaisingEvents = true;
-            string banner = File.ReadAllText("banner.txt");
-            Console.WriteLine(banner);
+            Console.WriteLine(File.ReadAllText("bannerE.txt"));
             Console.WriteLine($"Watching changes at {path}");
             Console.WriteLine("\nPress ENTER anytime to exit.");
             Console.WriteLine("\nPlease make honest music.\n");
