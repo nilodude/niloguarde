@@ -1,0 +1,15 @@
+D:\desarrollo\consoli\bin\Debug\net7.0\consoli.exe
+D:\desarrollo\consoli\bin\Debug\net7.0\consoli.deps.json
+D:\desarrollo\consoli\bin\Debug\net7.0\consoli.runtimeconfig.json
+D:\desarrollo\consoli\bin\Debug\net7.0\consoli.dll
+D:\desarrollo\consoli\bin\Debug\net7.0\consoli.pdb
+D:\desarrollo\consoli\obj\Debug\net7.0\consoli.csproj.AssemblyReference.cache
+D:\desarrollo\consoli\obj\Debug\net7.0\consoli.GeneratedMSBuildEditorConfig.editorconfig
+D:\desarrollo\consoli\obj\Debug\net7.0\consoli.AssemblyInfoInputs.cache
+D:\desarrollo\consoli\obj\Debug\net7.0\consoli.AssemblyInfo.cs
+D:\desarrollo\consoli\obj\Debug\net7.0\consoli.csproj.CoreCompileInputs.cache
+D:\desarrollo\consoli\obj\Debug\net7.0\consoli.dll
+D:\desarrollo\consoli\obj\Debug\net7.0\refint\consoli.dll
+D:\desarrollo\consoli\obj\Debug\net7.0\consoli.pdb
+D:\desarrollo\consoli\obj\Debug\net7.0\consoli.genruntimeconfig.cache
+D:\desarrollo\consoli\obj\Debug\net7.0\ref\consoli.dll
