@@ -41,7 +41,7 @@ namespace MyNamespace
             {
                 return;
             }
-            Console.WriteLine($"Saved: {e.FullPath}");
+            Console.WriteLine($"{DateTime.Now} Saved: {e.FullPath}");
 
             string xmlPath = e.FullPath.Replace(".als", ".xml");
             string args = $"gzip -cd '{e.FullPath}' > '{xmlPath}'"; 
@@ -56,7 +56,7 @@ namespace MyNamespace
                 
                 Process.Start(ProcessInfo);
 
-                Console.WriteLine($"Unzipped XML: {xmlPath}");
+                Console.WriteLine($"{DateTime.Now} Unzipped XML: {xmlPath}");
             }
         }
 
@@ -71,9 +71,11 @@ namespace MyNamespace
 
         private static void OnRenamed(object sender, RenamedEventArgs e)
         {
-            Console.WriteLine($"Renamed:");
-            Console.WriteLine($"    Old: {e.OldFullPath}");
-            Console.WriteLine($"    New: {e.FullPath}");
+            if(!(e.OldFullPath+e.FullPath).Contains("Tmp")){
+                Console.WriteLine($"Renamed:");
+                Console.WriteLine($"    Old: {e.OldFullPath}");
+                Console.WriteLine($"    New: {e.FullPath}");
+            }
         }
 
         private static void OnError(object sender, ErrorEventArgs e) =>
