@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\desarrollo\\consoli\\consoli.csproj": {}
+    "D:\\desarrollo\\dotnet\\niloguarde\\consoli.csproj": {}
   },
   "projects": {
-    "D:\\desarrollo\\consoli\\consoli.csproj": {
+    "D:\\desarrollo\\dotnet\\niloguarde\\consoli.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\desarrollo\\consoli\\consoli.csproj",
+        "projectUniqueName": "D:\\desarrollo\\dotnet\\niloguarde\\consoli.csproj",
         "projectName": "consoli",
-        "projectPath": "D:\\desarrollo\\consoli\\consoli.csproj",
+        "projectPath": "D:\\desarrollo\\dotnet\\niloguarde\\consoli.csproj",
         "packagesPath": "C:\\Users\\alfon\\.nuget\\packages\\",
-        "outputPath": "D:\\desarrollo\\consoli\\obj\\",
+        "outputPath": "D:\\desarrollo\\dotnet\\niloguarde\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alfon\\AppData\\Roaming\\NuGet\\NuGet.Config"
