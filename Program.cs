@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Diagnostics;
+using System.Text;
 
 namespace MyNamespace
 {
@@ -43,7 +44,7 @@ namespace MyNamespace
             }
             Console.WriteLine($"{DateTime.Now} Saved: {e.FullPath}");
 
-            string xmlPath = e.FullPath.Replace(".als", ".xml");
+            string xmlPath = e.FullPath.Replace(".als", ".xml").Replace("ave","output");
             string args = $"gzip -cd '{e.FullPath}' > '{xmlPath}'"; 
 
             //TODO: NEED TO HANDLE ERRORS ON CMD
@@ -53,10 +54,13 @@ namespace MyNamespace
             if (ProcessInfo != null){
                 ProcessInfo.CreateNoWindow = true;
                 ProcessInfo.UseShellExecute = false;
-                
+
                 Process.Start(ProcessInfo);
 
                 Console.WriteLine($"{DateTime.Now} Unzipped XML: {xmlPath}");
+
+                //GZIP generates UTF-16 LE BOM encoding and git cant see it
+                //probably need to read file, change encoding, and write to new file
             }
         }
 
