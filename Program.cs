@@ -45,7 +45,7 @@ namespace MyNamespace
             Console.WriteLine($"{DateTime.Now} Saved: {e.FullPath}");
 
             string xmlPath = e.FullPath.Replace(".als", ".xml").Replace("ave","output");
-            string args = $"gzip -cd '{e.FullPath}' > '{xmlPath}'"; 
+            string args = $"gzip -cd '{e.FullPath}' > '{xmlPath}' -encoding utf8"; //-encoding utf8 makes empty file
 
             //TODO: NEED TO HANDLE ERRORS ON CMD
 
