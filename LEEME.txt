@@ -1,1 +1,4 @@
 dotnet publish -r win-x64 -p:PublishSingleFile=true --self-contained
+
+
+this xml unzipped could be used to edit the project in case ableton cant open because of version
